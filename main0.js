@@ -25,15 +25,13 @@ var fruits = ['apple', 'apricot', 'avocado', 'blueberry', 'cherry', 'coconut', '
       }
 
       $(document).on("click",function(e) {
-        if(!$(e.target).closest("#list li").length){
-            $("#keyword").val("");
-            $(".list").remove();
-        }else {
-
+        if($(e.target).closest("#list li").length){
           var num = $(e.target).text();
           $('#keyword').val(num);
+          $(".list").hide();
+        }else{
+          $("#keyword").val("");
           $(".list").remove();
-
         }
       });
     });
