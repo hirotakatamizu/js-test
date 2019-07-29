@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Sample</title>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+$(function(){
+  //フォーカスアウトイベント
+  $('#txt1').focusout(function(){
+    console.log('フォーカスアウトイベントが発生しました。');
+  });
+});
+</script>
+</head>
+<body>
+  <input type="text" id="txt1" >
+</body>
+</html>
