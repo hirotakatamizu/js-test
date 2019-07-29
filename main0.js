@@ -21,18 +21,17 @@ var fruits = ['apple', 'apricot', 'avocado', 'blueberry', 'cherry', 'coconut', '
           }
         });
 
-      
+
       }
 
       $(document).on("click",function(e) {
-        if(!$(e.target).closest("#list li")){
-
+        if(!$(e.target).closest("#list li").length){
+            $("#keyword").val("");
             $(".list").remove();
+        }else {
 
-        }else{
-
-          var text = $(e.target).text();
-          $('#keyword').val(text);
+          var num = $(e.target).text();
+          $('#keyword').val(num);
           $(".list").remove();
 
         }

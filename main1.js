@@ -27,11 +27,13 @@ var fruits = ['apple', 'apricot', 'avocado', 'blueberry', 'cherry', 'coconut', '
       }
 
       $(document).on('click',function(e) {
-        if(!$(e.target).closest("#list li")){
-          $("#keyword").attr("placeholder", "好きなフルーツを入力してください")
+        if(!$(e.target).closest("#list li").length){
+          var test = $("#list li").first();
+          var text = $(test).text();
+          $('#keyword').val(text);
           $(".list").remove();
         }else{
-          var text = $(this).text();
+          var text = $(e.target).text();
           $('#keyword').val(text);
           $(".list").remove();
         }
